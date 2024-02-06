@@ -12,8 +12,6 @@ Replace the following configurations with your own API key:
 
 ACCESS-KEY = xxxxx \\Your apikey
 
-ACCESS-SECRET = xxxxxx \\Your secretkey
-
 ---
 ## Run params
 
