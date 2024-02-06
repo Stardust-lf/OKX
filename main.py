@@ -3,10 +3,10 @@ import datetime as dt
 import hmac
 import requests
 
-APIKEY = "e6f52292-2a06-4991-b777-d2e665f6b615"
-APISECRET = "E566977000E24C07C3D61646B7211C3B"
-PASS = "Lhf920834."
-BASE_URL = 'https://www.okx.com'
+APIKEY = 'xxxx'
+APISECRET = 'xxxxx'
+PASS = 'xxxx'
+BASE_URL = 'xxxx'
 
 
 def send_signed_request(http_method, url_path, payload={}):
