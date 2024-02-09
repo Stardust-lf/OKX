@@ -1,6 +1,6 @@
 from base_cls.base_operator import BaseOperator
 from base_cls.auth import RequestGenerator, Signature
-from base_cls.utils import RequestParam, ConfigReader, get_secret_config
+from base_cls.utils import RequestParam, get_secret_config
 
 
 class WalletQuery(BaseOperator):
