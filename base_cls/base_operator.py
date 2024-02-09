@@ -6,9 +6,9 @@ import json
 # print(request_gen.get_response('/api/v5/account/balance'))
 
 class BaseOperator:
-    def __init__(self,name:str='Base',url:str='',body:dict={}):
+    def __init__(self,name:str='Base',url:str='',body:dict={},request:RequestGenerator=RequestGenerator(utils.get_auth_config())):
         self.operation_name = name
-        self.request_gen = RequestGenerator(utils.get_auth_config())
+        self.request_gen = request
         self.url = url
         self.body = body
 
@@ -16,7 +16,7 @@ class BaseOperator:
         return
     def get_operation_name(self):
         return self.operation_name
-    def store_history(self):
+    def restore_history(self):
         return
     def get_url(self):
         return self.url
