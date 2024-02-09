@@ -28,9 +28,30 @@ class ConfigReader:
         auth_info = dict(self.config_parser.items('AUTH_INFO'))
         return {'APIKEY':auth_info['access-key'],'APISECRET':self.secret,'PASS':self.passwd}
 
+    def get_secret(self):
+        return self.secret
+
+class RequestParam:
+    def __init__(self, url:str, method:str, body:dict):
+        self._url = url
+        self._method = method
+        if body == {}:
+            body = ''
+        self._body = body
+
+    def get_params(self):
+        return {'URL':self._url, 'METHOD':self._method, 'BODY':self._body}
+
 def get_auth_config():
     sys_param = get_params()
     configReader = ConfigReader(sys_param[1], sys_param[0], config_parser=get_config_parser(), file_path='base_cls/configs/Config.ini')
     return configReader.get_auth()
+
+def get_secret_config():
+    sys_param = get_params()
+    configReader = ConfigReader(sys_param[1], sys_param[0], config_parser=get_config_parser(),
+                                file_path='base_cls/configs/Config.ini')
+    return configReader.get_secret()
+
 
 

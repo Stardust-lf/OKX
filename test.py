@@ -1,4 +1,4 @@
-from query import WalletQuery,CoinQuery,PriceQuery
+from query import WalletQuery, CoinQuery, PriceQuery
 
 wq = WalletQuery()
 print(wq.fetch_response())

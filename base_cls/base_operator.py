@@ -1,27 +1,17 @@
 from base_cls.auth import RequestGenerator
-import base_cls.utils as utils
-import json
-# auth_param = configReader.get_auth()
-# request_gen = RequestGenerator(auth_param)
-# print(request_gen.get_response('/api/v5/account/balance'))
-
+from base_cls.utils import get_secret_config
 class BaseOperator:
-    def __init__(self,name:str='Base',url:str='',body:dict={},request:RequestGenerator=RequestGenerator(utils.get_auth_config())):
+    def __init__(self, name, request: RequestGenerator):
         self.operation_name = name
-        self.request_gen = request
-        self.url = url
-        self.body = body
-
+        self.request = request
     def fetch_response(self):
         return
     def get_operation_name(self):
         return self.operation_name
     def restore_history(self):
         return
-    def get_url(self):
-        return self.url
     def get_request_gen(self):
-        return self.request_gen
+        return self.request
 
 class BaseListenerConfig:
     def __init__(self,name:str='BaseListener'):
