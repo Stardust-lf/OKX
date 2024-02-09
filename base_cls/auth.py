@@ -38,7 +38,6 @@ class RequestGenerator:
 
     def get_response(self):
         header = self.get_header(str(utils.get_time()))
-        print(header)
         url_req = BASE_URL + self._request_param['URL']
         response = requests.get(url_req, headers=header, params=self._request_param['BODY'])
         response.json()

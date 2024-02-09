@@ -46,7 +46,6 @@ class PriceQuery(BaseOperator):
 
     def fetch_response(self):
         # assert len(full_data['data']) == 1
-        print(self._rp.get_response())
         spot_data = self._rp.get_response()['data'][0]
         return {'BuyPriceLimit': spot_data['buyLmt'], 'SellPriceLimit': spot_data['sellLmt']}
 
